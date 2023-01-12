@@ -1,0 +1,15 @@
+{
+    "configurations": [
+        {
+            "name": "ais",
+            "includePath": [],
+            "defines": [],
+            "cStandard": "gnu11",
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "clang-arm64",
+            "compilerPath": "${workspaceFolder}/../../../../prebuilts/clang/host/linux-x86/clang-r416183b1/bin/clang++",
+            "compileCommands": "${workspaceFolder}/compile_commands.json"
+        }
+    ],
+    "version": 4
+}

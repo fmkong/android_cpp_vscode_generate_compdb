@@ -1,0 +1,27 @@
+{
+    "files.associations": {
+        "*.examples": "makefile",
+        "*.modules": "makefile",
+        "*.scons": "python",
+        "stdlib.h": "c",
+        "stdio.h": "c",
+        "signal.h": "c",
+        "ais_comm.h": "c",
+        "ais_log.h": "c",
+        "pthread.h": "c",
+        "cstring": "c",
+        "cstdlib": "c",
+        "ios": "cpp"
+    },
+    "git.ignoreLimitWarning": true,
+    "C_Cpp.errorSquiggles": "disabled",
+    "C_Cpp.intelliSenseEngineFallback": "disabled",
+    "C_Cpp.intelliSenseEngine": "disabled",
+    "C_Cpp.autocomplete": "disabled",
+    "clangd.arguments": [
+        "--completion-style=detailed",
+        "--header-insertion=never",
+        "--clang-tidy",
+        "--enable-config"
+    ],
+}

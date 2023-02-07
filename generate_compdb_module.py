@@ -198,8 +198,13 @@ class BuildNinjaForAndroidBP:
             if value and match.group(1) == value[0]:
                 line = line.replace(match.group(0), value[1])
                 # print("replace %s to %s" %(match.group(0), value[1]))
+            else:
+                line = line.replace(match.group(0), "")
+                print("ignore VAR_REF %s" %(match.group(0)))
 
-        if VAR_REF_PATTERN.search(line):
+        match = VAR_REF_PATTERN.search(line)
+        if match:
+            # print("expand match %s, line %s" %(match.group(1), line))
             line = self.expand_variables_in_line(line)
         return line
 
@@ -230,7 +235,11 @@ class BuildNinjaForAndroidBP:
         self.db_cur.execute(sql_text_select_module, (module,))
         # select the first one
         # for module_info in self.db_cur.fetchall():
-        module_info = self.db_cur.fetchall()[0]
+        module_info = self.db_cur.fetchall()
+        if len(module_info) > 0:
+            module_info = module_info[0]
+        else:
+            return
         lines += module_info[2]
         lines_new = ""
         build_dict = {}

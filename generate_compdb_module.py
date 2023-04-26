@@ -34,6 +34,8 @@ def parse_arguments(command = str()):
         i += 1
         if arg == "$":
             continue
+        if arg in ["-fexperimental-new-pass-manager"]:
+            continue
         arg = arg.replace('\"', '"').replace('\\', '').replace('\"\"', "\"")
         arg_list.append(arg)
     return arg_list
